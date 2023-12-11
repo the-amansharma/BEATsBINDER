@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage</title>
+    <style>
+        /* Split the screen in half */
+        *{
+          text-decoration: none;
+        }
+.split {
+  height: 100%;
+  width: 50%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+/* Control the left side */
+.left {
+  left: 0;
+  background-color: #080217;
+  z-index: 3;
+}
+
+/* Control the right side */
+.right {
+  right: 0;
+  background-image:url(/images/dancinlight.jpeg);
+}
+
+/* If you want the content centered horizontally and vertically */
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+/* Style the image inside the centered container, if needed */
+.centered img {
+  width: 150px;
+  border-radius: 50%;
+}
+
+.small-circle {
+  display: flex;
+        position: absolute;
+      top: 40%;
+      left: 50%;
+      transform: translate(-50%, -280%);
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background-color: whitesmoke;
+      z-index: 4;
+    }
+    .circle_text{
+    color: #080217;
+    text-align: center;
+    font-weight: bold;
+    font-family:'nycd';
+    font-size: 40px;
+    position: relative;
+      top: -25%;
+      left: 50%;
+      transform: translate(-50%, -150%);
+      z-index: 5;
+}
+@font-face{
+    font-family: 'nycd';
+    src: url(/fonts/NothingYouCouldDo-Regular.ttf);
+}
+
+
+.bbtxt{
+  margin: 0;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  display:flex;
+    color: white;
+    text-align: center;
+    font-weight: 400;
+    font-family:'nycd';
+    font-size: 35px;
+    position:relative;
+    transform: translate(-37%, 30%);
+    top: 0%;
+    left: 50%;
+}
+.sign{
+  display: flex;
+  color: whitesmoke;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  position: relative;
+  transform: translate(0%, 30%);
+  margin: 0px;
+  
+}
+label{
+  color: whitesmoke;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  font-weight:300;
+  font-size: larger;
+}
+
+input,.btn{
+    color: whitesmoke;
+    font-weight: bold;
+    background: none;
+    border: 1px solid whitesmoke;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 30px;
+    letter-spacing:1px;
+    padding: 12px;
+    margin: 5px;
+}
+#name:hover{
+  border-color: aqua;
+}
+#pwd:hover{
+  border-color: aqua;
+}
+
+.btn:hover{
+  background-color: white;
+  padding: 14px;
+ 
+}
+a:hover{
+  color: #080217;
+}
+
+div>p>a{
+  color: #080217;
+}
+button>a {
+  text-decoration: none;
+  color: white;
+}
+
+</style>
+    
+</head>
+<body>
+    <div class="split left">
+        <div class="centered">
+            <div class="small-circle"><p class="circle_text"><a href="#">BB</a></p></div>
+            <div><p class="bbtxt">BeatsBinder</p></div>
+            <div><p class="sign">---------------SIGN IN--------------</p></div>,<br><br><br>
+            <div form-div>
+              <form action="#" method="post">
+                <label for="name">Username</label><br>
+                <input type="text" id="name" name="name"><br><br>
+                <label for="pwd">Password</label><br>
+                <input type="password" id="pwd" name="pwd"><br><br>
+                <button class="btn"><a href="/homepage.html">SIGN IN</a></button>
+              </form> /* user data collection from here */
+            </div>
+        </div>
+      </div>
+      
+      <div class="split right">
+        <div class="centered">
+          
+        </div>
+      </div>
+</body>
+</html>

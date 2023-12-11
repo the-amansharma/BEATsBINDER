@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage</title>
+    <script src="https://kit.fontawesome.com/e3c20f28fc.js" crossorigin="anonymous"></script>
+</head>
+<style>
+    body{
+    background-color: #080217;
+    }
+
+    @font-face {
+        font-family: 'alco';
+        src: url('/fonts/Aclonica-Regular.ttf');
+    }
+   .music-app {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  grid-gap: 10px;
+  font-family: Arial, sans-serif;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+ /* background-color: #000; */
+  color: #fff;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.navigation .nav-link {
+  color: #fff;
+  text-decoration: none;
+  margin: 20px 80px;
+  font-size: large;
+ 
+}
+
+
+
+.content,.content2 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  grid-gap: 10px;
+  padding: 10px;
+}
+
+.playlist-category {
+  /*background-image: url(/images/dancinlight.jpeg);
+  background-size: cover;*/
+  color: #fff;
+  padding: 94px;
+  border-radius: 10px;
+  font-family:'alco';
+  font-size: 28px;
+  /* Add background images with inline styles or additional classes */
+}
+
+#p1{
+    background-image: url(/images/dancinlight.jpeg);
+    background-size: cover;
+}
+#p2{
+    background-image: url(/images/Kishorekumar.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+#p3{
+    background-image: url(/images/90s.jpg);
+    background-size: cover;
+}
+#p4{
+    background-image: url(/images/KR$NA.jpg);
+    background-size: cover;
+}
+#p5{
+    background-image: url(/images/arijit.jpg);
+    background-size: cover;
+}
+#p6{
+    background-image: url(/images/KK.jpg);
+    background-size: cover;
+}
+
+</style>
+<body>
+    <div class="music-app">
+        <div class="header">
+          <div class="logo">BB</div>
+          <nav class="navigation">
+            <a href="#" class="nav-link">Home</a>
+            <a href="#" class="nav-link">Playlist</a>
+            <a href="#" class="nav-link">Create</a>
+            <!-- Add additional navigation links as needed -->
+           
+          </nav>
+          <div class="user-settings">
+            <i class="fa-solid fa-gear fa-xl"></i>
+          </div>
+        </div>
+        <div class="content">
+          <div class="playlist-category" id="p1">Favorites</div>
+          <div class="playlist-category" id="p2"> 90's Hits</div>
+          <div class="playlist-category" id="p3">20's Hits</div>
+        </div>
+
+        <div class="content2">
+            <div class="playlist-category" id="p4">Rap</div>
+            <div class="playlist-category" id="p5">Arijit</div>
+            <div class="playlist-category" id="p6">KK</div>
+          </div>
+      </div>
+</body>
+</html>
