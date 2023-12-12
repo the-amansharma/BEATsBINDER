@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playlist</title>
+    <script src="https://kit.fontawesome.com/e3c20f28fc.js" crossorigin="anonymous"></script>
+</head>
+<style>
+    body{
+    background-color: #080217;
+    }
+
+    @font-face {
+        font-family: 'alco';
+        src: url('/fonts/Aclonica-Regular.ttf');
+    }
+   .music-app {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  grid-gap: 10px;
+  font-family: Arial, sans-serif;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+ /* background-color: #000; */
+  color: #fff;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.navigation .nav-link {
+  color: #fff;
+  text-decoration: none;
+  margin: 20px 80px;
+  font-size: large;
+ 
+}
+
+.playlist-container {
+  padding: 10px;
+}
+
+.playlist-item {
+    
+   
+  background-color: #f0f0f0;
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.playlist-item h2 {
+  margin: 0;
+}
+
+.playlist-item p {
+  margin: 5px 0;
+}
+
+
+</style>
+<body>
+    <div class="music-app">
+        <div class="header">
+          <div class="logo">BB</div>
+          <nav class="navigation">
+            <a href="/homepage.html" class="nav-link">Home</a>
+            <a href="/playlist.html" class="nav-link">Playlist</a>
+            <a href="/create.html" class="nav-link">Create</a>
+            <!-- Add additional navigation links as needed -->
+            </nav>
+            <div class="user-settings">
+                <i class="fa-solid fa-gear fa-xl"></i>
+            </div>
+        </div>
+
+     <main class="playlist-container">
+      <section class="playlist-item">
+        <h2>Favorites</h2>
+        <p>artist name | 50 songs</p>
+        <span>500k</span>
+      </section>
+      <section class="playlist-item">
+        <h2>Bollywood Hits</h2>
+        <p>artist name | 50 songs</p>
+        <span>500k</span>
+      </section>
+      <section class="playlist-item">
+        <h2>Hits</h2>
+        <!-- Content goes here -->
+      </section>
+    </main>
+    </div>        
+
+           
+          
+</body>
+</html>
