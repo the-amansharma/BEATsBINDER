@@ -8,14 +8,21 @@
     <style>
         input[type="file"]::file-selector-button {
   border-radius: 4px;
-  padding: 0 16px;
-  height: 40px;
+  padding: 0 1px;
+  height: 10px;
   cursor: pointer;
   background-color: white;
   border: 1px solid rgba(0, 0, 0, 0.16);
   box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.05);
-  margin-right: 16px;
+  margin-right: 1px;
   transition: background-color 200ms;
+
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3vmax;
+  box-sizing: border-box;
 }
 
 /* file upload button hover state */
@@ -32,18 +39,63 @@ input[type="file"]::file-selector-button:active {
 
 /* default boilerplate to center input */
 body {
-  min-height: 100vh;
-  max-width: 100vw;
+  
+  background-color: #080217;
+    font-family: 'alco';
+}
+    @font-face {
+        font-family: 'alco';
+        src: url('/fonts/Aclonica-Regular.ttf');
+    }
+   .music-app {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  grid-gap: 10px;
+  font-family: Arial, sans-serif;
+}
+
+.header {
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  padding: 5vmax;
-  box-sizing: border-box;
+  padding: 10px;
+  color: #fff;
+  
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  font-family: 'alco';
+}
+
+.navigation .nav-link {
+  color: #fff;
+  text-decoration: none;
+  margin: 20px 80px;
+  font-size: large;
+  font-family: 'alco';
+ 
 }
     </style>
 </head>
 <body>
-    <a href="/homepage.html"><i class="fa-solid fa-house fa-2xl" style="color: black; size: 500px;"></i></a>
+  <div class="music-app">
+    <div class="header">
+      <div class="logo">BB</div>
+      <nav class="navigation">
+        <a href="/homepage.html" class="nav-link">Home</a>
+        <a href="/playlist.html" class="nav-link">Playlist</a>
+        <a href="/create.html" class="nav-link">Create</a>
+        <!-- Add additional navigation links as needed -->
+       
+      </nav>
+      <div class="user-settings">
+        <i class="fa-solid fa-gear fa-xl"></i>
+      </div>
+    </div>
+  
     <input type="file" name="newplaylist" id="create">
+  </div>  
 </body>
 </html>
