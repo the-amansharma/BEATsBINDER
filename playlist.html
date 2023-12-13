@@ -1,34 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Playlist</title>
-    <script src="https://kit.fontawesome.com/e3c20f28fc.js" crossorigin="anonymous"></script>
-</head>
-<style>
-    body{
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Music Playlist</title>
+  <script src="https://kit.fontawesome.com/e3c20f28fc.js" crossorigin="anonymous"></script>
+  <style>
+    body {
     background-color: #080217;
     }
-
     @font-face {
         font-family: 'alco';
         src: url('/fonts/Aclonica-Regular.ttf');
     }
-   .music-app {
-  display: grid;
-  grid-template-rows: auto 1fr;
-  grid-gap: 10px;
-  font-family: Arial, sans-serif;
+    .music-app {
+  font-family: 'alco';
 }
-
-.header {
+   
+    .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 10px;
- /* background-color: #000; */
   color: #fff;
+  
 }
 
 .logo {
@@ -44,63 +40,195 @@
  
 }
 
-.playlist-container {
-  padding: 10px;
-}
+    .playlist-card {
+      display: flex;
+      align-items: center;
+      background: white;
+      color: black;
+      padding: 10px;
 
-.playlist-item {
-    
-   
-  background-color: #f0f0f0;
-  margin-bottom: 10px;
-  padding: 10px;
-  border-radius: 8px;
-}
+      margin-bottom: 10px;
+      /* Adjust as needed */
+      border-radius: 10px;
+      /* Adjust as needed */
+    }
 
-.playlist-item h2 {
-  margin: 0;
-}
+    .playlist-image {
+      width: 80px;
+      /* Adjust as needed */
+      height: 80px;
+      /* Adjust as needed */
+      border-radius: 10px;
+      /* Adjust as needed */
+      margin-right: 10px;
+    }
 
-.playlist-item p {
-  margin: 5px 0;
-}
+    .playlist-info {
+      flex-grow: 1;
+    }
 
+    .playlist-title {
+      font-size: 20px;
+      /* Adjust as needed */
+      margin: 0;
+    }
 
-</style>
+    .playlist-details,
+    .playlist-stats {
+      font-size: 14px;
+      /* Adjust as needed */
+      margin: 0;
+    }
+
+    .playlist-actions {
+      display: flex;
+      align-items: center;
+    }
+
+    .delete-btn {
+      background-image: url(/images/del.jpeg);
+
+      background: red;
+      border: none;
+      border-radius: 50px;
+      color: whitesmoke;
+      cursor: pointer;
+      font-size: 30px;
+      /* Adjust as needed */
+    }
+    </style>
+  <script>
+     document.addEventListener('DOMContentLoaded', (event) => {
+  let timeoutId = null;
+
+  document.querySelectorAll('.delete-btn').forEach(button => {
+    button.addEventListener('click', (e) => {
+      // Prevent the mousedown and mouseup events from firing
+      e.stopPropagation();
+      e.preventDefault();
+      // Perform the delete action
+      button.closest('.playlist-card').remove();
+    });
+
+    button.addEventListener('mousedown', (e) => {
+      // Start the timer for a long press
+      timeoutId = setTimeout(() => {
+        // Long press action, start rename process
+        const playlistCard = button.closest('.playlist-card');
+        const titleElement = playlistCard.querySelector('.playlist-title');
+        const newName = prompt('Enter new playlist name:', titleElement.textContent);
+        if (newName) {
+          titleElement.textContent = newName;
+        }
+      }, 1000); // 1000ms for long press
+    });
+
+    button.addEventListener('mouseup', (e) => {
+      // Clear the timer if mouseup event is fired before the 1000ms
+      clearTimeout(timeoutId);
+    });
+
+    button.addEventListener('mouseleave', (e) => {
+      // Clear the timer if the mouse leaves the button before the 1000ms
+      clearTimeout(timeoutId);
+    });
+  });
+});
+  </script>
+  
+</head>
+
 <body>
-    <div class="music-app">
-        <div class="header">
-          <div class="logo">BB</div>
-          <nav class="navigation">
-            <a href="/homepage.html" class="nav-link">Home</a>
-            <a href="/playlist.html" class="nav-link">Playlist</a>
-            <a href="/create.html" class="nav-link">Create</a>
-            <!-- Add additional navigation links as needed -->
-            </nav>
-            <div class="user-settings">
-                <i class="fa-solid fa-gear fa-xl"></i>
-            </div>
-        </div>
+  <div class="music-app">
+    <div class="header">
+      <div class="logo">BB</div>
+      <nav class="navigation">
+        <a href="/homepage.html" class="nav-link">Home</a>
+        <a href="/playlist.html" class="nav-link">Playlist</a>
+        <a href="/create.html" class="nav-link">Create</a>
+        <!-- Add additional navigation links as needed -->
+       
+      </nav>
+      <div class="user-settings">
+        <i class="fa-solid fa-gear fa-xl"></i>
+      </div>
+    </div>
 
-     <main class="playlist-container">
-      <section class="playlist-item">
-        <h2>Favorites</h2>
-        <p>artist name | 50 songs</p>
-        <span>500k</span>
-      </section>
-      <section class="playlist-item">
-        <h2>Bollywood Hits</h2>
-        <p>artist name | 50 songs</p>
-        <span>500k</span>
-      </section>
-      <section class="playlist-item">
-        <h2>Hits</h2>
-        <!-- Content goes here -->
-      </section>
-    </main>
-    </div>        
+  <!-- ... Playlist 1 ... -->
+<hr><br>
+  <div class="playlist-card">
+    <img class="playlist-image" src="/images/song1.jpeg" alt="Playlist Cover">
+    <div class="playlist-info">
+      <h3 class="playlist-title">Favourite</h3>
+      <p class="playlist-details">Kishore Kumar | 50 songs</p>
+      <div class="playlist-stats">
+        <span class="likes">❤️ 500k</span>
+        <span class="created-by">Created by Divyanshu</span>
+      </div>
+    </div>
+    <div class="playlist-actions">
+      <button class="delete-btn">🗑</button>
+    </div>
+  </div>
 
-           
-          
+  <!-- ... Playlist 2 ... -->
+
+  <div class="playlist-card">
+    <img class="playlist-image" src="/images/bollywoodhits.jpeg" alt="Playlist Cover">
+    <div class="playlist-info">
+      <h3 class="playlist-title">Bollywood Hits</h3>
+      <p class="playlist-details">Abhijeet | 50 songs</p>
+      <div class="playlist-stats">
+        <span class="likes">❤️ 400k</span>
+        <span class="created-by">created by Aman sharma</span>
+      </div>
+    </div>
+    <div class="playlist-actions">
+      <button class="delete-btn">🗑</button>
+    </div>
+  </div>
+
+  <!-- ... Playlist 3 ... -->
+
+
+  <div class="playlist-card">
+    <img class="playlist-image" src="/images/party.jpeg" alt="Playlist Cover">
+    <div class="playlist-info">
+      <h3 class="playlist-title">Party Song</h3>
+      <p class="playlist-details">Guru randhawa | 50 songs</p>
+      <div class="playlist-stats">
+        <span class="likes">❤️ 120k</span>
+        <span class="created-by">created by sumit</span>
+      </div>
+    </div>
+    <div class="playlist-actions">
+      <button class="delete-btn">🗑</button>
+    </div>
+  </div>
+
+  <!-- ... Playlist 4 ... -->
+
+
+  <div class="playlist-card">
+    <img class="playlist-image" src="/images/oldsongs.jpeg" alt="Playlist Cover">
+    <div class="playlist-info">
+      <h3 class="playlist-title">Seaside</h3>
+      <p class="playlist-details">Mohammad Rafi | 50 songs</p>
+      <div class="playlist-stats">
+        <span class="likes">❤️ 50k</span>
+        <span class="created-by">created by Avneesh</span>
+      </div>
+    </div>
+    <div class="playlist-actions">
+      <button class="delete-btn">🗑</button>
+    </div>
+  </div>
+
+
+
+
+  <!-- ... other playlist items ... -->
+  </div>
 </body>
+
 </html>
