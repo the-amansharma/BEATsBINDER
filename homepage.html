@@ -27,8 +27,8 @@
   justify-content: space-between;
   align-items: center;
   padding: 10px;
- /* background-color: #000; */
   color: #fff;
+  
 }
 
 .logo {
@@ -44,8 +44,6 @@
  
 }
 
-
-
 .content,.content2 {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
@@ -54,8 +52,6 @@
 }
 
 .playlist-category {
-  /*background-image: url(/images/dancinlight.jpeg);
-  background-size: cover;*/
   color: #fff;
   padding: 94px;
   border-radius: 10px;
@@ -65,8 +61,9 @@
 }
 
 #p1{
-    background-image: url(/images/dancinlight.jpeg);
+    background-image: url(/images/fav.jpg);
     background-size: cover;
+    
 }
 #p2{
     background-image: url(/images/Kishorekumar.jpg);
@@ -74,7 +71,7 @@
     background-repeat: no-repeat;
 }
 #p3{
-    background-image: url(/images/90s.jpg);
+    background-image: url(/images/bollygood.jpg);
     background-size: cover;
 }
 #p4{
@@ -89,16 +86,55 @@
     background-image: url(/images/KK.jpg);
     background-size: cover;
 }
-
+#p7{
+  background-image: url(/images/kpop.jpg);
+  background-size: cover;
+}
+#p8{
+  background-image: url(/images/lofihiphop.jpg);
+  background-size: contain;
+}
+#p9{
+  background-image: url(/images/indie.jpg);
+  background-size: cover;
+}
+#p10{
+  background-image: url(/images/rock.jpg);
+  background-size: contain;
+}
+#p11{
+  background-image: url(/images/bollywood.jpg);
+  background-size: cover;
+}
+#pfinal{
+  background-color: whitesmoke;
+ 
+  padding: 0;
+  margin: 0;
+}
+a{
+  text-decoration: none;
+  color: #080217;
+}
+span{
+  text-decoration: none;
+  color: #080217;
+  font-size: 150px;
+  font-family: Arial, Helvetica, sans-serif;
+  position: absolute;
+ 
+  justify-content: center;
+  margin: 20px 150px;
+}
 </style>
 <body>
     <div class="music-app">
         <div class="header">
           <div class="logo">BB</div>
           <nav class="navigation">
-            <a href="#" class="nav-link">Home</a>
-            <a href="#" class="nav-link">Playlist</a>
-            <a href="#" class="nav-link">Create</a>
+            <a href="/homepage.html" class="nav-link">Home</a>
+            <a href="/playlist.html" class="nav-link">Playlist</a>
+            <a href="/create.html" class="nav-link">Create</a>
             <!-- Add additional navigation links as needed -->
            
           </nav>
@@ -108,7 +144,7 @@
         </div>
         <div class="content">
           <div class="playlist-category" id="p1">Favorites</div>
-          <div class="playlist-category" id="p2"> 90's Hits</div>
+          <div class="playlist-category" id="p2"> Old is Gold</div>
           <div class="playlist-category" id="p3">20's Hits</div>
         </div>
 
@@ -116,6 +152,18 @@
             <div class="playlist-category" id="p4">Rap</div>
             <div class="playlist-category" id="p5">Arijit</div>
             <div class="playlist-category" id="p6">KK</div>
+          </div>
+
+          <div class="content2">
+            <div class="playlist-category" id="p7">K-Pop</div>
+            <div class="playlist-category" id="p8">Lofi Hip-hop</div>
+            <div class="playlist-category" id="p9">Indie</div>
+          </div>
+
+          <div class="content2">
+            <div class="playlist-category" id="p10">Rock</div>
+            <div class="playlist-category" id="p11">Love is in Air</div>
+            <div class="playlist-category" id="pfinal"><span><a href="/create.html">+</a></span></div>
           </div>
       </div>
 </body>
